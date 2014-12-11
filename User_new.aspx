@@ -24,7 +24,7 @@
              <asp:ListItem Text="Admin" Value="Admin" />
             <asp:ListItem Text="Sub" Value="Sub" />
             <asp:ListItem Text="Calc" Value="Calc" />
-            <asp:ListItem Text="SubCalc" Value="SubCalc" />
+            <asp:ListItem Text="SubCalc" Value="kage" />
         </asp:DropDownList>
          
     <br />
