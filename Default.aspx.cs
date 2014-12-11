@@ -21,31 +21,31 @@ public partial class _Default : System.Web.UI.Page
               SqlCommand SQLCmd = new SqlCommand("select * from Users where Username = '"+ Username_Field.Text +"' and UserPwd = '"+Password_Field.Text +"'", DBCon);
               SQLCmd.Connection.Open();
               SqlDataReader Reader = SQLCmd.ExecuteReader();
-              string USR = "", PWD = "", USRR ="";
+              string USR = "", PWD = "", USRT ="";
 
               while (Reader.Read())
               {
                   USR = Reader["Username"].ToString();
                   PWD = Reader["Userpwd"].ToString();
-                  USRR = Reader["Userright"].ToString();
+                  USRT = Reader["Usertype"].ToString();
               }
              //Denne side redirecte til Admin
-              if (USR == Username_Field.Text && PWD == Password_Field.Text && USRR == "1")
+              if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Admin")
               {
                   Response.Redirect("User_Admin.aspx");
               }
               //Denne side redirecte til Sub
-              else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRR == "2")
+              else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Sub")
               {
                   Response.Redirect("User_Sub.aspx");
               }
               //Denne side redirecte til Calc
-              else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRR == "3")
+              else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Calc")
               {
                   Response.Redirect("User_Calc.aspx");
               }
               //Denne side redirecte til Subcalc
-              else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRR == "4")
+              else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Subcalc")
               {
                   Response.Redirect("User_SubCalc.aspx");
               }

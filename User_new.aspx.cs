@@ -10,6 +10,7 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //Dette ville autogenere brugertyperne - vi har valgt statisk i User_new.aspx
         //SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
         //SqlCommand SQLCmd = new SqlCommand("select Usertype from Users", DBCon);
         //SQLCmd.Connection.Open();

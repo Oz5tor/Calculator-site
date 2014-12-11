@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <%--<div id="wrapper">--%>
         <h3>Opret bruger</h3>
 
         <asp:TextBox CssClass="login_input" required="required" ID="new_username" style="text-align:center" value="Brugernavn" onfocus="if (this.value == 'Brugernavn') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Brugernavn';}" runat="server" Width="22%"></asp:TextBox>
@@ -31,8 +30,5 @@
 
         <asp:Button CssClass="button" ID="create_user" runat="server" Text="Opret bruger" OnClick="create_user_Click" />
         <asp:Button CssClass="button" ID="cancel_newuser" runat="server" Text="Afbryd" OnClick="cancel_newuser_Click" />
-
-
-    <%--</div>--%>
 </asp:Content>
 
