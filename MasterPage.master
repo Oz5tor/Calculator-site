@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="StyleSheet.css" rel="stylesheet" />
+<head runat="server">
+    <title>ÜberCalc Inc</title>
+    <link id="Link1" runat="server" rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link id="Link2" runat="server" rel="icon" href="img/favicon.ico" type="image/ico"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <img src="img/Ubercalc1.png" width="298" />
+       
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

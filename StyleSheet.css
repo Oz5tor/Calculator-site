@@ -1,0 +1,47 @@
+﻿body {
+    background:url("img/calculator.jpg");
+    overflow-y:scroll;
+    font-family:'Trebuchet MS';
+}
+
+.login_input {
+    font-family:'Trebuchet MS';
+    background-color:#e2e2e0;
+    border:solid 1px black;
+}
+.login_input:focus {
+    font-family:'Trebuchet MS';
+    background-color:white;
+    border:solid 1px black;
+}
+.button {
+    border-radius: 10px;
+    border: solid black 1px;
+    font-weight: bold;
+    background-color: #e2e2e0;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.button:hover {
+    border-radius:10px;
+    border:solid black 2px;
+}
+
+
+#wrapper {
+    width:955px;
+    min-height:200px;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:100px;
+    text-align:center;
+}
+
+h1, h4, h3 {
+    margin-top:0px;
+    margin-bottom:15px;
+    font-weight:bold;
+    color:#003366;
+}
