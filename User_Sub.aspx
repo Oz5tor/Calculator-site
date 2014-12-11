@@ -4,6 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h4>Dette er Sub</h4>
-        <asp:Button ID="logoff_sub" runat="server" Text="Log af" OnClick="logoff_sub_Click" />
+    <asp:Label ID="Sub_Label" runat="server" Text=""></asp:Label>
+    <br />
+        <asp:Button CssClass="button" ID="logoff_sub" runat="server" Text="Log af" OnClick="logoff_sub_Click" />
 </asp:Content>
 

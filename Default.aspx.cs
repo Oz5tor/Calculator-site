@@ -32,21 +32,29 @@ public partial class _Default : System.Web.UI.Page
              //Denne side redirecte til Admin
               if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Admin")
               {
+                  Session["Login"] = Username_Field.Text;
+                  Session["Login_User"] = USRT.ToString();
                   Response.Redirect("User_Admin.aspx");
               }
               //Denne side redirecte til Sub
               else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Sub")
               {
+                  Session["Login"] = Username_Field.Text;
+                  Session["Login_User"] = USRT.ToString();
                   Response.Redirect("User_Sub.aspx");
               }
               //Denne side redirecte til Calc
               else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Calc")
               {
+                  Session["Login"] = Username_Field.Text;
+                  Session["Login_User"] = USRT.ToString();
                   Response.Redirect("User_Calc.aspx");
               }
               //Denne side redirecte til Subcalc
               else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Subcalc")
               {
+                  Session["Login"] = Username_Field.Text;
+                  Session["Login_User"] = USRT.ToString();
                   Response.Redirect("User_SubCalc.aspx");
               }
               //Denne side redirecte til Default(.aspx)
