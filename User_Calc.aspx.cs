@@ -13,6 +13,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             Calc_Label.Text = "Hej " + Session["Login"].ToString() + ". Du er logget på Calc siden.";
         }
+            
         else
         {
             Response.Redirect("Default.aspx");
