@@ -17,6 +17,8 @@
             <br />
         <asp:Button CssClass="button" ID="Login_field" runat="server" Text="Login" OnClick="Login_field_Click" />
         <asp:Button CssClass="button" ID="new_user" runat="server" Text="Ny bruger?" OnClick="new_user_field_Click" />
+        <asp:Button CssClass="button" ID="kontakt_field" runat="server" Text="Kontakt os?" OnClick="kontakt_field_Click" />
+
 
         </asp:Panel>
 </asp:Content>      

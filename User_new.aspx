@@ -29,6 +29,9 @@
     <br />
 
         <asp:Button CssClass="button" ID="create_user" runat="server" Text="Opret bruger" OnClick="create_user_Click" />
-        <asp:Button CssClass="button" ID="cancel_newuser" runat="server" Text="Afbryd" OnClick="cancel_newuser_Click" />
+        <a class="button" href="Default.aspx">Til forsiden</a>
+    <br />
+    <asp:Label ID="label_brugerfindes" style="color:red" runat="server" Text="" Visible ="false"></asp:Label>
+    <asp:Label ID="label_brugeropret" style="color:red" runat="server" Text="" Visible ="false"></asp:Label>
 </asp:Content>
 

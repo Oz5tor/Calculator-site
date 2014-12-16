@@ -32,35 +32,44 @@ public partial class Default2 : System.Web.UI.Page
     protected void create_user_Click(object sender, EventArgs e)
     {
         SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
+        //int affected = 0;
+        SqlCommand SQLCheck = new SqlCommand("select * from Users where Username = '"+new_username.Text+"' or Email = '"+new_email.Text+"'", DBCon);
+        SQLCheck.Connection.Open();
+        SqlDataReader Reader = SQLCheck.ExecuteReader();
 
-        SqlCommand SQLCmd = new SqlCommand("Insert into Users values ('"+new_username.Text+"','"+new_password.Text+"','"+new_address.Text+"','"+new_email.Text+"','"+Usertype_drop.Text+"');", DBCon);
-        SQLCmd.Connection.Open();
-        SQLCmd.ExecuteNonQuery();
-        SQLCmd.Connection.Close();
-        SQLCmd.Connection.Dispose();
-
-        //Denne side redirecte til Admin
-        if (Usertype_drop.Text == "Admin")
+        if (Reader.Read())
         {
-            Response.Redirect("User_Admin.aspx");
-        }
-        //Denne side redirecte til Sub
-        if (Usertype_drop.Text == "Sub")
-        {
-            Response.Redirect("User_Sub.aspx");
-        }
-        //Denne side redirecte til Calc
-        if (Usertype_drop.Text == "Calc");
-        {
-            Response.Redirect("User_Calc.aspx");
-        }
-        //Denne side redirecte til Subcalc
-        if (Usertype_drop.Text == "SubCalc");
-        {
-            Response.Redirect("User_SubCalc.aspx");
+            new_username.Text = "";
+            new_password.Text = "";
+            conf_new_password.Text = "";
+            new_email.Text = "";
+            new_address.Text = "";
+            label_brugerfindes.Visible = true;
+            label_brugerfindes.Text = "Brugernavnet eller Email findes allerede!";
+            SQLCheck.Connection.Close();
+            SQLCheck.Connection.Dispose();
         }
 
-        
+
+        else
+        {
+            SQLCheck.Connection.Close();
+            SQLCheck.Connection.Dispose();
+            SqlConnection DBCon1 = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
+            SqlCommand SQLCmd = new SqlCommand("Insert into Users values ('" + new_username.Text + "','" + new_password.Text + "','" + new_address.Text + "','" + new_email.Text + "','" + Usertype_drop.Text + "');", DBCon1);
+            SQLCmd.Connection.Open();
+            SQLCmd.ExecuteNonQuery();
+            SQLCmd.Connection.Close();
+            SQLCmd.Connection.Dispose();
+            label_brugeropret.Visible = true;
+            label_brugeropret.Text = "Brugeren " +new_username.Text+ " er oprettet.";
+            new_username.Text = "";
+            new_password.Text = "";
+            conf_new_password.Text = "";
+            new_email.Text = "";
+            new_address.Text = "";
+
+        }
       
 
     }

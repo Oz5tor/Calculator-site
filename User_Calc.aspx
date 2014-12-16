@@ -18,7 +18,7 @@
 
     <%--<asp:Panel id="pnlCalcDefaultButton" runat="server" DefaultButton="calcsum">--%>
     <%--this.Form.DefaultButton = this.calcsum.UniqueID;--%>
-
+    <form action="">
     <table class="calculator" id="calc">
             <tr>
                 <td colspan="4" class="calc_td_result">
@@ -99,6 +99,7 @@
         <script type="text/javascript">
             document.getElementById('calc').onload = init_calc('calc');
         </script>
+        </form>
     <asp:Button CssClass="button" OnClientClick="" UseSubmitBehavior="false" ID="logoff_calc" runat="server" Text="Log af" OnClick="logoff_calc_Click" />
 </asp:Content>
 

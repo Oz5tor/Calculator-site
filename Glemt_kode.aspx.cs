@@ -27,10 +27,6 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void Ress_password_Click(object sender, EventArgs e)
     {
-
-
-        
-        
         if (res_password.Text == conf_res_password.Text)
         {
             int affectedrows;
@@ -39,7 +35,7 @@ public partial class Default2 : System.Web.UI.Page
             Sqlcheckuser.Connection.Open();
             affectedrows = Sqlcheckuser.ExecuteNonQuery();
             Sqlcheckuser.Connection.Close();
-            if (affectedrows == 1)
+            if (affectedrows == -1)
             {
                 // updatere password i databasen
                 SqlCommand Sqlupdate = new SqlCommand("UPDATE Users SET Userpwd = '" + res_password.Text + "' where Username = '" + res_Username.Text + "' and Email = '" + res_email.Text + "'", DBCon);

@@ -10,7 +10,6 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
     }
 
     protected void Login_field_Click(object sender, EventArgs e)
@@ -79,5 +78,9 @@ public partial class _Default : System.Web.UI.Page
     protected void new_user_field_Click(object sender, EventArgs e)
     {
         Response.Redirect("User_new.aspx");
+    }
+    protected void kontakt_field_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Kontakt.aspx");
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Glemt_kode.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page  Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Glemt_kode.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
@@ -22,7 +22,7 @@
     <br />
 
     <asp:Button CssClass="button" ID="Ress_password" runat="server" Text="Reset Password" OnClick="Ress_password_Click" />
-    <asp:Button CssClass="button" ID="forside_glemt" runat="server" Text="Log af" OnClick="forside_glemt_Click" />
+     <a class="button" href="Default.aspx">Til forsiden</a>
 
 
 </asp:Content>

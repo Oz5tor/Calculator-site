@@ -6,6 +6,10 @@
     <h4>Dette er Admin</h4>
     <asp:Label ID="Admin_Label" runat="server" Text=""></asp:Label>
     <br />
+    <asp:DropDownList CssClass="login_input" ID="Dropdown_dropdelete" style="text-align:center" runat="server" Width="22%">
+    </asp:DropDownList>
+    <br />
+        <asp:Button CssClass="button" ID="delete_user" runat="server" Text="Slet bruger" OnClick="delete_user_Click" />
         <asp:Button CssClass="button" ID="logoff_admin" runat="server" Text="Log af" OnClick="logoff_admin_Click" />
 </asp:Content>
 
