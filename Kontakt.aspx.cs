@@ -27,4 +27,5 @@ public partial class Default2 : System.Web.UI.Page
         besked_send.Visible = true;
         
         }
-    }
+   
+}

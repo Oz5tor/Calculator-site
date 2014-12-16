@@ -29,16 +29,19 @@ public partial class Default2 : System.Web.UI.Page
     {
         if (res_password.Text == conf_res_password.Text)
         {
-            int affectedrows;
+            //int affectedrows;
             SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
-            SqlCommand Sqlcheckuser = new SqlCommand("Select * From Users Where Username = '" + res_Username.Text + "' and Email = '"+res_email.Text+"'", DBCon);
-            Sqlcheckuser.Connection.Open();
-            affectedrows = Sqlcheckuser.ExecuteNonQuery();
-            Sqlcheckuser.Connection.Close();
-            if (affectedrows == -1)
+            SqlCommand SQLCheck = new SqlCommand("select * from Users where Username = '" + res_Username.Text + "' and Email = '" + res_email.Text + "'", DBCon);
+            SQLCheck.Connection.Open();
+            SqlDataReader Reader = SQLCheck.ExecuteReader();
+
+            if (Reader.Read())
             {
+                SQLCheck.Connection.Close();
+                SQLCheck.Connection.Dispose();
                 // updatere password i databasen
-                SqlCommand Sqlupdate = new SqlCommand("UPDATE Users SET Userpwd = '" + res_password.Text + "' where Username = '" + res_Username.Text + "' and Email = '" + res_email.Text + "'", DBCon);
+                SqlConnection DBCon2 = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
+                SqlCommand Sqlupdate = new SqlCommand("UPDATE Users SET Userpwd = '" + res_password.Text + "' where Username = '" + res_Username.Text + "' and Email = '" + res_email.Text + "'", DBCon2);
                 Sqlupdate.Connection.Open();
                 Sqlupdate.ExecuteNonQuery();
                 Sqlupdate.Connection.Close();
@@ -51,7 +54,7 @@ public partial class Default2 : System.Web.UI.Page
                 res_password.Text = "";
                 conf_res_password.Text = "";
                 res_email.Text = "";
-                Response.AddHeader("REFRESH", "2;URL=Default.aspx");
+                Response.AddHeader("REFRESH", "5;URL=Default.aspx");
             }
             else
             {

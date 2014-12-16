@@ -14,7 +14,7 @@
     <br />
     <asp:TextBox CssClass="login_input" required="required" ID="res_Username" style="text-align:center" value="Indtast Brugernavn" onfocus="if (this.value == 'Indtast Brugernavn') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Indtast Brugernavn';}" runat="server" Width="22%"></asp:TextBox>
     <br />
-    <asp:TextBox CssClass="login_input" required="required" TextMode="Email" ID="res_email" style="text-align:center" value="Email" onfocus="if (this.value == 'Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Email';}" runat="server" Width="22%"></asp:TextBox>
+    <asp:TextBox CssClass="login_input" required="required" TextMode="Email" ID="res_email" style="text-align:center" value="Indtast Email" onfocus="if (this.value == 'Indtast Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Indtast Email';}" runat="server" Width="22%"></asp:TextBox>
     <br />
     <asp:TextBox CssClass="login_input" required="required" ID="res_password" style="text-align:center" value="Nyt Password" onfocus="if (this.value == 'Nyt Password') {this.value = '';this.type='password';}" onblur="if (this.value == '') {this.value = 'Nyt Password';this.type='text';}" runat="server" Width="22%"></asp:TextBox>
     <br /> 
@@ -22,7 +22,7 @@
     <br />
 
     <asp:Button CssClass="button" ID="Ress_password" runat="server" Text="Reset Password" OnClick="Ress_password_Click" />
-     <a class="button" href="Default.aspx">Til forsiden</a>
+     <a class="button" href="Default.aspx">Til Forsiden</a>
 
 
 </asp:Content>
