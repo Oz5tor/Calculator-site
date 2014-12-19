@@ -9,7 +9,7 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Login"] != null && Session["Login_User"].ToString() == "Subcalc")
+        if (Session["Login"] != null && Session["Login_User"].ToString() == "SubCalc")
         {
             Subcalc_Label.Text = "Hej " + Session["Login"].ToString() + ". Du er logget på SubCalc siden.";
         }

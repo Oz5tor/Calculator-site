@@ -11,14 +11,6 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (res_password.Text == conf_res_password.Text )
-        //{
-        //    Resat_Label1.Text = "test";
-        //    Resat_Label1.Visible = true;
-        //}
-        
-        
-
     }
 
     protected void forside_glemt_Click(object sender, EventArgs e)
@@ -27,9 +19,10 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void Ress_password_Click(object sender, EventArgs e)
     {
+        //Tjekker de to indtastede password er ens
         if (res_password.Text == conf_res_password.Text)
         {
-            //int affectedrows;
+            //Tjekker username og email stemmer overens
             SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
             SqlCommand SQLCheck = new SqlCommand("select * from Users where Username = '" + res_Username.Text + "' and Email = '" + res_email.Text + "'", DBCon);
             SQLCheck.Connection.Open();

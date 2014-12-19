@@ -1,23 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="User_Calc.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <%-- Her linker vi til koden - så siden kan se det(ligesom stylesheetet) --%>
     <link href="norm_calc/norm_calc_style.css" rel="stylesheet" />
     <script src="norm_calc/norm_calc.js"></script>
     <script type="text/javascript">
-        document.getElementById('kage').addEventListener('keypress', function (event) {
-            if (event.keyCode == 13) {
-                event.preventDefault();
-            }
-        });
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h4>Dette er calc</h4>
     <asp:Label ID="Calc_Label" runat="server" Text=""></asp:Label>
     <br />
-
-    <%--<asp:Panel id="pnlCalcDefaultButton" runat="server" DefaultButton="calcsum">--%>
-    <%--this.Form.DefaultButton = this.calcsum.UniqueID;--%>
     <form action="">
     <table class="calculator" id="calc">
             <tr>
@@ -96,6 +89,7 @@
                 </td>
             </tr>
         </table>
+        <%-- Her kaldes lommeregner funktionen --%>
         <script type="text/javascript">
             document.getElementById('calc').onload = init_calc('calc');
         </script>

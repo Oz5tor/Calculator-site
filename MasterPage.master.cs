@@ -13,26 +13,4 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
 
     }
-
-
-    
-    //protected void Login_field_Click(object sender, EventArgs e)
-    //{
-    //    if (Username_Field.Text != "" && Password_Field.Text != "")
-    //    {
-    //        if (Username_Field.Text == "Oliver" && Password_Field.Text == "123")
-    //        {
-    //            Response.Redirect("Users.aspx");
-    //        }
-    //        else
-    //        {
-    //            Response.Redirect("Default.aspx");
-            
-    //    }
-    //    }
-    //    else
-    //    {
-    //        Response.Redirect("Default.aspx");
-    //    }
-    //}
 }

@@ -11,10 +11,12 @@
         <br />
         <asp:TextBox CssClass="login_input" required="required" TextMode="Email" ID="kontakt_email" style="text-align:center" value="Email" onfocus="if (this.value == 'Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Email';}" runat="server" Width="22%"></asp:TextBox>
         <br />
+    <%-- Multiline svarer til et textarea i HTML. Der skal være plads flere linjer. --%>
         <asp:TextBox id="kontakt_besked" TextMode="multiline" Columns="28" Rows="5" runat="server" ></asp:TextBox>
         <br />
         <asp:Button CssClass="button" ID="Send_besked" runat="server" Text="Send besked" OnClick="Send_besked_Click" />
         <input class="button" id="Reset1" type="reset" value="Reset" />
+    <%-- Igen et link - istedet for knap --%>
         <a class="button" href="Default.aspx">Til forsiden</a>
     <br />
     <asp:Label style="color:red"  ID="besked_send" runat="server" Visible="false" Text="Tak for din besked."></asp:Label>

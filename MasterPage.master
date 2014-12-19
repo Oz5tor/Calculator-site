@@ -6,6 +6,7 @@
 <link href="StyleSheet.css" rel="stylesheet" />
 <head runat="server">
     <title>ÜberCalc Inc</title>
+    <%-- Ikon i tabbet/fanen --%>
     <link id="Link1" runat="server" rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
     <link id="Link2" runat="server" rel="icon" href="img/favicon.ico" type="image/ico"/>
     <asp:ContentPlaceHolder id="head" runat="server">
@@ -13,7 +14,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <%-- Wrapperen her - bruges istedet for center. --%>
     <div id="wrapper">
+        <%-- Logo /banner --%>
         <img src="img/Ubercalc1.png" width="298" />
        
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">

@@ -10,7 +10,7 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //Hvis brugeroplysninger er korrekt - sætter dette en session.
         if (Session["Login"] != null && Session["Login_User"].ToString() == "Admin")
         {
             Admin_Label.Text = "Hej " + Session["Login"].ToString() + ". Du er logget på Admin siden.";
@@ -38,12 +38,14 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void logoff_admin_Click(object sender, EventArgs e)
     {
+        //Ved klik på logoff lukker vi her for session
         Session["Login"] = "";
         Session["Login_user"] = "";
         Response.Redirect("Default.aspx");
     }
     protected void delete_user_Click(object sender, EventArgs e)
     {
+        //Denne knap/kode sletter en bruger fra databasen (Udfra en dropdown liste)
         SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
         SqlCommand SQLCmd = new SqlCommand("DELETE FROM Users WHERE Username = '"+ Dropdown_dropdelete.Text + "'", DBCon);
         SQLCmd.Connection.Open();
@@ -56,7 +58,7 @@ public partial class Default2 : System.Web.UI.Page
     protected void update_user_Click(object sender, EventArgs e)
     {
         
-        
+        //Her ændre koden på brugerens oplysninger.
         SqlConnection DBCon1 = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
         SqlCommand SQLCmd = new SqlCommand("UPDATE Users SET Username = '" + Edit_username.Text.ToString() + "',  Userpwd = '" + Edit_pwd.Text.ToString() + "', Adresse = '" + Edit_adress.Text.ToString() + "', Email = '" + Edit_email.Text.ToString() + "', Usertype = '" + Edit_usertype.Text.ToString() + "' where UserID = '" + user_id.Text + "'", DBCon1);
         SQLCmd.Connection.Open();
@@ -68,6 +70,7 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void select_user_Click(object sender, EventArgs e)
     {
+        //Her henter vi oplysninger op brugeren
         SqlConnection DBCon2 = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
         SqlCommand SQLCmd = new SqlCommand("select * from Users where Username = '" + Dropdown_dropdelete.Text+ "'", DBCon2);
         SQLCmd.Connection.Open();
@@ -98,7 +101,6 @@ public partial class Default2 : System.Web.UI.Page
         // set values from database into input feilds
         while (Reader.Read())
         {
-
             user_id.Text = Reader["UserID"].ToString();
             Edit_username.Text = Reader["Username"].ToString();
             Edit_email.Text = Reader["Email"].ToString();

@@ -17,7 +17,7 @@ public partial class Default2 : System.Web.UI.Page
         
          
         SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
-
+        //Her indsætter koden de indtastede oplysninger til databasen.
         SqlCommand SQLCmd = new SqlCommand("Insert into Kontakt values ('" + kontakt_navn.Text + "','" + kontakt_email.Text + "','" + kontakt_besked.Text + "');", DBCon);
         SQLCmd.Connection.Open();
         SQLCmd.ExecuteNonQuery();

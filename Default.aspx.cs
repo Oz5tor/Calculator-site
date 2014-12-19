@@ -14,9 +14,11 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Login_field_Click(object sender, EventArgs e)
     {
+        //Tjekker felterne ikke er tomme
         if (Username_Field.Text != "" && Password_Field.Text != "")
         {
-            SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
+              //Tjekker brugernavn og password er korrekt i forhold til vores database.
+              SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
               SqlCommand SQLCmd = new SqlCommand("select * from Users where Username = '"+ Username_Field.Text +"' and UserPwd = '"+Password_Field.Text +"'", DBCon);
               SQLCmd.Connection.Open();
               SqlDataReader Reader = SQLCmd.ExecuteReader();
@@ -26,6 +28,7 @@ public partial class _Default : System.Web.UI.Page
               {
                   USR = Reader["Username"].ToString();
                   PWD = Reader["Userpwd"].ToString();
+                  //Usertype er med for at skelne hvor brugeren skal redirectes til - når de er logget ind
                   USRT = Reader["Usertype"].ToString();
               }
              //Denne side redirecte til Admin
@@ -50,7 +53,7 @@ public partial class _Default : System.Web.UI.Page
                   Response.Redirect("User_Calc.aspx");
               }
               //Denne side redirecte til Subcalc
-              else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "Subcalc")
+              else if (USR == Username_Field.Text && PWD == Password_Field.Text && USRT == "SubCalc")
               {
                   Session["Login"] = Username_Field.Text;
                   Session["Login_User"] = USRT.ToString();

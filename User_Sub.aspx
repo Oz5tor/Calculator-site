@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="User_Sub.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <%-- Linker til scriptet --%>
     <script src="sub_calc/subnetcalc.js"></script>
     <script src="sub_calc/subnetcalc.js"></script>
     <style type="text/css">
@@ -12,6 +13,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h4>Dette er Sub</h4>
     <center>
+        <%-- Formen her bliver sammen med javascriptet til det der ses som subcalculator --%>
 <form name="SCForm" action="#" id="SCForm">
 	<div>
 	<table>

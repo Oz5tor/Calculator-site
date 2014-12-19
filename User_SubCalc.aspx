@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="User_SubCalc.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <%-- Linker til både calculator og subcalculator --%>
     <script src="sub_calc/create_subcac_resuts.js"></script>
     <script src="sub_calc/subnetcalc.js"></script>
     <script src="norm_calc/norm_calc.js"></script>
@@ -139,6 +140,7 @@
 
 </div>
     <div style="clear:both;"></div>
+    <br />
     <center>
         <asp:Button CssClass="button" ID="logoff_subcalc" runat="server" Text="Log af" OnClick="logoff_subcalc_Click" />
     </center>

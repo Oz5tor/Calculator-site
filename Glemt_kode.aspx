@@ -22,6 +22,7 @@
     <br />
 
     <asp:Button CssClass="button" ID="Ress_password" runat="server" Text="Reset Password" OnClick="Ress_password_Click" />
+    <%-- Dette er lavet som et link og stylet som en knap - istedet for en almindelig knap. Fordi vi har et  "required" felt i email - kan man ikke gå tilbage via en knap - men godt via et link --%>
      <a class="button" href="Default.aspx">Til Forsiden</a>
 
 

@@ -5,8 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
         
     <h4>Velkommen til | Login</h4>
-    <%--<marquee direction="left">Hello visitor, this is a message that goes to left.</marquee>--%>
-        
+          
+  <%-- Dette gør enter gpr til Login_field - istedet for næste boks i teksten. --%>
   <asp:Panel id="pnlDefaultButton" runat="server" DefaultButton="Login_field">
 
 

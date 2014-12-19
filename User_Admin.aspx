@@ -52,6 +52,7 @@
             </td>
         </tr>
         <tr>
+            <%-- Sætte to kolonner sammen --%>
             <td colspan="2">
                 <asp:Button Visible="false" CssClass="button" ID="update_user" runat="server" Text="Opdater bruger" OnClick="update_user_Click" />
                 <asp:Button Visible="false" CssClass="button" ID="delete_user" runat="server" Text="Slet bruger" OnClick="delete_user_Click" />

@@ -10,16 +10,6 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Dette ville autogenere brugertyperne - vi har valgt statisk i User_new.aspx
-        //SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
-        //SqlCommand SQLCmd = new SqlCommand("select Usertype from Users", DBCon);
-        //SQLCmd.Connection.Open();
-        //SqlDataReader Reader = SQLCmd.ExecuteReader();
-
-        //while (Reader.Read())
-        //{
-        //    Usertype_drop.Items.Add(Reader["Usertype"].ToString());
-        //}
     }
 
 
@@ -31,8 +21,8 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void create_user_Click(object sender, EventArgs e)
     {
+        //Her tjekkes der for om brugeren(brugernavn/email) findes i forvejen.
         SqlConnection DBCon = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
-        //int affected = 0;
         SqlCommand SQLCheck = new SqlCommand("select * from Users where Username = '"+new_username.Text+"' or Email = '"+new_email.Text+"'", DBCon);
         SQLCheck.Connection.Open();
         SqlDataReader Reader = SQLCheck.ExecuteReader();
@@ -53,8 +43,10 @@ public partial class Default2 : System.Web.UI.Page
 
         else
         {
+            //Grunden dette står to steder - er fordi at connection skal lukkes - og hvis koden går udenom om IF sætningen så er den stadig åben.
             SQLCheck.Connection.Close();
             SQLCheck.Connection.Dispose();
+            //Her oprettes du som bruger
             SqlConnection DBCon1 = new SqlConnection("Data Source=RDK100938;Initial Catalog=Skole;Integrated Security=True");
             SqlCommand SQLCmd = new SqlCommand("Insert into Users values ('" + new_username.Text + "','" + new_password.Text + "','" + new_address.Text + "','" + new_email.Text + "','" + Usertype_drop.Text + "');", DBCon1);
             SQLCmd.Connection.Open();
